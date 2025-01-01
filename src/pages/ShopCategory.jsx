@@ -25,7 +25,7 @@ const ShopCategory = (props) => {
           }
         })}
       </div>
-      <div className="flex justify-center items-center mt-10 mx-auto rounded-3xl w-40 h-14 bg-gray-500 text-white text-lg cursor-pointer font-medium">
+      <div className="flex justify-center items-center mt-10 mx-auto rounded-3xl w-40 h-14 bg-gray-500 text-white text-lg cursor-pointer font-medium mb-10">
         explore more
       </div>
     </div>
