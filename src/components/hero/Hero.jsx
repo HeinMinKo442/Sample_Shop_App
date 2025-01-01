@@ -7,9 +7,9 @@ const Hero = () => {
   return (
     <div
       
-      className="flex justify-center items-center px-10 h-screen "
+      className="flex flex-col px-16 justify-center items-center md:flex-row md:h-screen h-full mt-16"
     >
-      <div className="flex flex-col flex-1 justify-center gap-5 pl-10 ">
+      <div className="flex flex-1 flex-col justify-center gap-5 md:ml-16">
         <h2 className="text-lg mb-5">NEW ARRIVALS ONLY</h2>
 
         <div className="text-4xl font-semibold">
@@ -27,7 +27,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="flex flex-1 py-6 items-center justify-center ">
+      <div className="flex flex-1 py-6 items-center justify-center">
         <img className="lg:w-96 md:w-80 sm:w-50 w-50" src={hero_image} alt="" />
       </div>
     </div>
