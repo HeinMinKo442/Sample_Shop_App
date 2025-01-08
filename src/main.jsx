@@ -5,9 +5,9 @@ import Router from "./router/router.jsx";
 import ShopContextProvider from "./contexts/ShopContext.jsx";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <ShopContextProvider>
+  <ShopContextProvider>
+    <StrictMode>
       <Router />
-    </ShopContextProvider>
-  </StrictMode>
+    </StrictMode>
+  </ShopContextProvider>
 );

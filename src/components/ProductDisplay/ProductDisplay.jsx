@@ -1,8 +1,12 @@
 import React from "react";
 import star_icon from "../assets/star_icon.png";
 import star_dull_icon from "../assets/star_dull_icon.png";
+import { useShop } from "../../contexts/ShopContext";
+import { useNavigate } from "react-router-dom";
 
 const ProductDisplay = ({ product }) => {
+  const { addToCart } = useShop();
+  const navigate = useNavigate();
   return (
     <div className="flex flex-row my-5 mx-auto">
       <div className="flex flex-1">
@@ -13,7 +17,7 @@ const ProductDisplay = ({ product }) => {
           <img className="w-32" src={product.image} alt="" />
         </div>
         <div className="flex w-full">
-          <img  src={product.image} alt="" />
+          <img src={product.image} alt="" />
         </div>
       </div>
 
@@ -48,7 +52,13 @@ const ProductDisplay = ({ product }) => {
             <div className="py-2 px-4 bg-gray-200 text-black text-sm">XXl</div>
           </div>
         </div>
-        <button className="bg-red-600 text-white px-4 py-2 border-none w-40 mt-5">
+        <button
+          className="bg-red-600 text-white px-4 py-2 border-none w-40 mt-5"
+          onClick={() => {
+            addToCart(product.id);
+      
+          }}
+        >
           ADD TO CART
         </button>
         <div className="flex flex-col mt-10">
