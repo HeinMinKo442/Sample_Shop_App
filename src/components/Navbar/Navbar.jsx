@@ -3,10 +3,12 @@ import cart_icon from "../assets/cart_icon.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import mark_icon from "../assets/mark_icon.png";
 import { useState } from "react";
+import { useShop } from "../../contexts/ShopContext";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
+  const { getTotalCartItem } = useShop();
   return (
     <nav className="fixed top-0 left-0 w-full shadow-md z-50 bg-white">
       <div className="flex justify-around p-4 shadow-md">
@@ -59,7 +61,7 @@ const Navbar = () => {
                   className="absolute text-red-600  outline-none rounded-lg"
                   style={{ top: "-15px", right: "-5px" }}
                 >
-                  0
+                  {getTotalCartItem()}
                 </div>
               </button>
             </div>
@@ -68,7 +70,12 @@ const Navbar = () => {
 
         <div className="md:hidden flex items-center text-black">
           <div className="relative">
-            <div onClick={() => setShow(!show)} className="cursor-pointer">
+            <div
+              onClick={() => {
+                setShow(!show);
+              }}
+              className="cursor-pointer"
+            >
               <img src={mark_icon} alt="" className="cursor-pointer" />
             </div>
             <div>
@@ -76,6 +83,9 @@ const Navbar = () => {
                 <div className="absolute right-0 top-5 bg-cyan-700 text-white w-28 shadow-md rounded-lg">
                   <NavLink
                     to="/mens"
+                    onClick={() => {
+                      setShow(false);
+                    }}
                     className="flex cursor-pointer hover:bg-slate-400 px-2 py-2 hover:rounded-t-lg"
                   >
                     Men
@@ -83,6 +93,9 @@ const Navbar = () => {
 
                   <NavLink
                     to="/womens"
+                    onClick={() => {
+                      setShow(false);
+                    }}
                     className="flex cursor-pointer hover:bg-slate-400 px-2 py-2"
                   >
                     Women
@@ -90,6 +103,9 @@ const Navbar = () => {
 
                   <NavLink
                     to="/kids"
+                    onClick={() => {
+                      setShow(false);
+                    }}
                     className="flex cursor-pointer hover:bg-slate-400 px-2 py-2"
                   >
                     Kids
@@ -97,6 +113,9 @@ const Navbar = () => {
 
                   <NavLink
                     to="/cart"
+                    onClick={() => {
+                      setShow(false);
+                    }}
                     className="flex cursor-pointer hover:bg-slate-400 px-2 py-2"
                   >
                     Cart
@@ -104,6 +123,9 @@ const Navbar = () => {
 
                   <NavLink
                     to="/login"
+                    onClick={() => {
+                      setShow(false);
+                    }}
                     className="flex cursor-pointer hover:bg-slate-400 px-2 py-2 hover:rounded-b-lg"
                   >
                     Login
